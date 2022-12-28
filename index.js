@@ -31,7 +31,16 @@ document.getElementById("leg_but").addEventListener("click", function() { change
 document.getElementById("back_but").addEventListener("click", function() { changeAcc(document.getElementById("back"), back) });
 
 //Function to change the style
- function changeStyle (earPos, mouthPos, neckPos, accPos, hairPos, eyesPos, legPos, backPos) {
+ function changeStyle ({
+  earPos = ears[0],
+  mouthPos = mouth[0],
+  neckPos = neck[0],
+  accPos = acc[0],
+  hairPos = hair[0],
+  eyesPos = eyes[0],
+  legPos = leg[0],
+  backPos = back[0] }) 
+  {
     document.getElementById("ears").setAttribute("src", earPos);
     document.getElementById("mouth").setAttribute("src", mouthPos);
     document.getElementById("neck").setAttribute("src", neckPos);
@@ -41,11 +50,44 @@ document.getElementById("back_but").addEventListener("click", function() { chang
     document.getElementById("leg").setAttribute("src", legPos);
     document.getElementById("back").setAttribute("src", backPos);
   }
-document.getElementById("def_but").addEventListener("click", function() {changeStyle (ears[0], mouth[0], neck[0], "" , hair[0], eyes[0], leg[0], back[0])});
-document.getElementById("cur_but").addEventListener("click", function() {changeStyle (ears[1], mouth[4], neck[0], acc[3], hair[2], eyes[3], leg[2], back[7])});
-document.getElementById("sho_but").addEventListener("click", function() {changeStyle (ears[2], mouth[3], neck[2], acc[1], hair[6], eyes[2], leg[1], back[16])});
-document.getElementById("ban_but").addEventListener("click", function() {changeStyle (ears[0], mouth[0], neck[3], acc[2], hair[1], eyes[1], leg[3], back[14])});
-document.getElementById("ele_but").addEventListener("click", function() {changeStyle (ears[2], mouth[0], neck[1], "" , hair[3], eyes[4], leg[4], back[11])});
-document.getElementById("qui_but").addEventListener("click", function() {changeStyle (ears[2], mouth[1], neck[0], acc[0], hair[5], eyes[5], leg[5], back[4])});
-
-
+document.getElementById("def_but").addEventListener("click", function() {changeStyle ({
+  accPos: "" })});
+document.getElementById("cur_but").addEventListener("click", function() {changeStyle ({
+  earPos: ears[1],
+  mouthPos: mouth[4],
+  accPos: acc[3],
+  hairPos: hair[2],
+  eyesPos: eyes[3],
+  legPos: leg[2],
+  backPos: back[7] })});
+document.getElementById("sho_but").addEventListener("click", function() {changeStyle ({
+  earPos: ears[2],
+  mouthPos: mouth[3],
+  neckPos: neck[2],
+  accPos: acc[1],
+  hairPos: hair[6],
+  eyesPos: eyes[2],
+  legPos: leg[1],
+  backPos: back[16] })});
+document.getElementById("ban_but").addEventListener("click", function() {changeStyle ({
+  neckPos: neck[3],
+  accPos: acc[2],
+  hairPos:hair[1],
+  eyesPos: eyes[1],
+  legPos: leg[3],
+  backPos: back[14] })});
+document.getElementById("ele_but").addEventListener("click", function() {changeStyle ({
+  earPos: ears[2],
+  neckPos: neck[1],
+  accPos: "",
+  hairPos: hair[3],
+  eyesPos: eyes[4],
+  legPos:leg[4],
+  backPos: back[11] })});
+document.getElementById("qui_but").addEventListener("click", function() {changeStyle ({
+  earPos: ears[2],
+  mouthPos: mouth[1],
+  hairPos: hair[5],
+  eyesPos: eyes[5],
+  legPos: leg[5],
+  backPos: back[4] })});
