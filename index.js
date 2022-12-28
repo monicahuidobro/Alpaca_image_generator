@@ -111,3 +111,12 @@ document.getElementById("qui_but").addEventListener("click", function() {changeS
   eyesPos: eyes[5],
   legPos: leg[5],
   backPos: back[4] })});
+  document.getElementById("ran_but").addEventListener("click", function() {changeStyle ({
+    earPos: ears[Math.floor(Math.random()*ears.length)],
+    mouthPos: mouth[Math.floor(Math.random()*mouth.length)],
+    accPos: acc[Math.floor(Math.random()*acc.length)],
+    hairPos: hair[Math.floor(Math.random()*hair.length)],
+    eyesPos: eyes[Math.floor(Math.random()*eyes.length)],
+    legPos: leg[Math.floor(Math.random()*leg.length)],
+    backPos: back[Math.floor(Math.random()*back.length)]})});
+  

@@ -104,15 +104,17 @@ button {
   border: 1px solid black;
 }
 
-.default button {
+.others button {
   width: 400px;
-  background-color: yellow;
+  background-color: black;
+  color: white;
   font-family: "Righteous", cursive;
 }
 
 button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: lightgray;
+  color: black;
 }
 button:active {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
