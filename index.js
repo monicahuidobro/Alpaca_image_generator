@@ -1,41 +1,36 @@
-//Arrays de las imagenes posibles a mostrar
-const ears =["./Images/alpaca/ears/default.png", "./Images/alpaca/ears/tilt-backward.png", "./Images/alpaca/ears/tilt-forward.png"];
-const mouth =["./Images/alpaca/mouth/default.png", "./Images/alpaca/mouth/astonished.png", "./Images/alpaca/mouth/eating.png", "./Images/alpaca/mouth/laugh.png", "./Images/alpaca/mouth/tongue.png"];
-const neck =["./Images/alpaca/neck/default.png", "./Images/alpaca/neck/bend-backward.png", "./Images/alpaca/neck/bend-forward.png", "./Images/alpaca/neck/thick.png"];
-const acc =["./Images/alpaca/accessories/earings.png", "./Images/alpaca/accessories/flower.png", "./Images/alpaca/accessories/glasses.png", "./Images/alpaca/accessories/headphone.png"];
-const hair =["./Images/alpaca/hair/default.png", "./Images/alpaca/hair/bang.png", "./Images/alpaca/hair/curls.png", "./Images/alpaca/hair/elegant.png","./Images/alpaca/hair/fancy.png", 
-          "./Images/alpaca/hair/quiff.png", "./Images/alpaca/hair/short.png"];
-const eyes =["./Images/alpaca/eyes/default.png", "./Images/alpaca/eyes/angry.png", "./Images/alpaca/eyes/naughty.png", "./Images/alpaca/eyes/panda.png", 
-          "./Images/alpaca/eyes/smart.png", "./Images/alpaca/eyes/star.png"];
-const leg =["./Images/alpaca/leg/default.png", "./Images/alpaca/leg/bubble-tea.png", "./Images/alpaca/leg/cookie.png", "./Images/alpaca/leg/game-console.png", 
-          "./Images/alpaca/leg/tilt-backward.png", "./Images/alpaca/leg/tilt-forward.png"];
-const back =["./Images/alpaca/backgrounds/blue50.png", "./Images/alpaca/backgrounds/blue60.png", "./Images/alpaca/backgrounds/blue70.png", "./Images/alpaca/backgrounds/darkblue30.png", 
-            "./Images/alpaca/backgrounds/darkblue50.png", "./Images/alpaca/backgrounds/darkblue70.png", "./Images/alpaca/backgrounds/green50.png", "./Images/alpaca/backgrounds/green60.png", 
-            "./Images/alpaca/backgrounds/green70.png", "./Images/alpaca/backgrounds/grey40.png", "./Images/alpaca/backgrounds/grey70.png", "./Images/alpaca/backgrounds/grey80.png", 
-            "./Images/alpaca/backgrounds/red50.png", "./Images/alpaca/backgrounds/red60.png", "./Images/alpaca/backgrounds/red70.png", "./Images/alpaca/backgrounds/yellow50.png", 
-            "./Images/alpaca/backgrounds/yellow60.png", "./Images/alpaca/backgrounds/yellow70.png"];
+//Arrays of images 
+const ears =["./images/alpaca/ears/default.png", "./images/alpaca/ears/tilt-backward.png", "./images/alpaca/ears/tilt-forward.png"];
+const mouth =["./images/alpaca/mouth/default.png", "./images/alpaca/mouth/astonished.png", "./images/alpaca/mouth/eating.png", "./images/alpaca/mouth/laugh.png", "./images/alpaca/mouth/tongue.png"];
+const neck =["./images/alpaca/neck/default.png", "./images/alpaca/neck/bend-backward.png", "./images/alpaca/neck/bend-forward.png", "./images/alpaca/neck/thick.png"];
+const acc =["./images/alpaca/accessories/earings.png", "./images/alpaca/accessories/flower.png", "./images/alpaca/accessories/glasses.png", "./images/alpaca/accessories/headphone.png"];
+const hair =["./images/alpaca/hair/default.png", "./images/alpaca/hair/bang.png", "./images/alpaca/hair/curls.png", "./images/alpaca/hair/elegant.png","./images/alpaca/hair/fancy.png", 
+          "./images/alpaca/hair/quiff.png", "./images/alpaca/hair/short.png"];
+const eyes =["./images/alpaca/eyes/default.png", "./images/alpaca/eyes/angry.png", "./images/alpaca/eyes/naughty.png", "./images/alpaca/eyes/panda.png", 
+          "./images/alpaca/eyes/smart.png", "./images/alpaca/eyes/star.png"];
+const leg =["./images/alpaca/leg/default.png", "./images/alpaca/leg/bubble-tea.png", "./images/alpaca/leg/cookie.png", "./images/alpaca/leg/game-console.png", 
+          "./images/alpaca/leg/tilt-backward.png", "./images/alpaca/leg/tilt-forward.png"];
+const back =["./images/alpaca/backgrounds/blue50.png", "./images/alpaca/backgrounds/blue60.png", "./images/alpaca/backgrounds/blue70.png", "./images/alpaca/backgrounds/darkblue30.png", 
+            "./images/alpaca/backgrounds/darkblue50.png", "./images/alpaca/backgrounds/darkblue70.png", "./images/alpaca/backgrounds/green50.png", "./images/alpaca/backgrounds/green60.png", 
+            "./images/alpaca/backgrounds/green70.png", "./images/alpaca/backgrounds/grey40.png", "./images/alpaca/backgrounds/grey70.png", "./images/alpaca/backgrounds/grey80.png", 
+            "./images/alpaca/backgrounds/red50.png", "./images/alpaca/backgrounds/red60.png", "./images/alpaca/backgrounds/red70.png", "./images/alpaca/backgrounds/yellow50.png", 
+            "./images/alpaca/backgrounds/yellow60.png", "./images/alpaca/backgrounds/yellow70.png"];
 
-//Funciones para mostrar cambios en los accesorios
-function changeAccesorie (fuenteImg, arrImg) {
-  const imgActual = fuenteImg.getAttribute("src");
-  const posActual = arrImg.indexOf(imgActual);
-  let posNueva;
-  if (posActual < (arrImg.length -1)){
-    posNueva = posActual + 1 ;
-  } else {posNueva = 0};
-  const imgNueva = arrImg[posNueva];
-  fuenteImg.setAttribute("src", imgNueva);
+//Function to change the accesories
+function changeAcc (source, arr) {
+  const currImgIndex = arr.indexOf(source.getAttribute("src"));
+  const newImgIndex = (currImgIndex < (arr.length -1)) ? currImgIndex +1 : 0;
+  source.setAttribute("src", arr[newImgIndex]);
 }
-document.getElementById("ears_but").addEventListener("click", function() { changeAccesorie(document.getElementById("ears"), ears) });
-document.getElementById("mouth_but").addEventListener("click", function() { changeAccesorie(document.getElementById("mouth"), mouth) });
-document.getElementById("neck_but").addEventListener("click", function() { changeAccesorie(document.getElementById("neck"), neck) });
-document.getElementById("acc_but").addEventListener("click", function() { changeAccesorie(document.getElementById("acc"), acc) });
-document.getElementById("hair_but").addEventListener("click", function() { changeAccesorie(document.getElementById("hair"), hair) });
-document.getElementById("eyes_but").addEventListener("click", function() { changeAccesorie(document.getElementById("eyes"), eyes) });
-document.getElementById("leg_but").addEventListener("click", function() { changeAccesorie(document.getElementById("leg"), leg) });
-document.getElementById("back_but").addEventListener("click", function() { changeAccesorie(document.getElementById("back"), back) });
+document.getElementById("ears_but").addEventListener("click", function() { changeAcc(document.getElementById("ears"), ears) });
+document.getElementById("mouth_but").addEventListener("click", function() { changeAcc(document.getElementById("mouth"), mouth) });
+document.getElementById("neck_but").addEventListener("click", function() { changeAcc(document.getElementById("neck"), neck) });
+document.getElementById("acc_but").addEventListener("click", function() { changeAcc(document.getElementById("acc"), acc) });
+document.getElementById("hair_but").addEventListener("click", function() { changeAcc(document.getElementById("hair"), hair) });
+document.getElementById("eyes_but").addEventListener("click", function() { changeAcc(document.getElementById("eyes"), eyes) });
+document.getElementById("leg_but").addEventListener("click", function() { changeAcc(document.getElementById("leg"), leg) });
+document.getElementById("back_but").addEventListener("click", function() { changeAcc(document.getElementById("back"), back) });
 
-//Funciones para mostrar cambios en los estilos
+//Function to change the style
  function changeStyle (earPos, mouthPos, neckPos, accPos, hairPos, eyesPos, legPos, backPos) {
     document.getElementById("ears").setAttribute("src", earPos);
     document.getElementById("mouth").setAttribute("src", mouthPos);
