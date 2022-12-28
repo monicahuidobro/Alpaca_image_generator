@@ -1,0 +1,79 @@
+* {
+  font-family: "Righteous", cursive;
+}
+.content {
+  display: inline-flex;
+}
+
+.alpaca_container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  z-index: 4;
+}
+
+.alpaca_container img {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+}
+
+#back {
+  z-index: 1;
+}
+#leg {
+  z-index: 2;
+}
+
+#ears {
+  z-index: 3;
+}
+
+#neck {
+  z-index: 4;
+}
+#hair {
+  z-index: 5;
+}
+#eyes {
+  z-index: 6;
+}
+#nose {
+  z-index: 7;
+}
+#mouth {
+  z-index: 8;
+}
+#acc {
+  z-index: 9;
+}
+
+.options_container {
+  flex: row wrap;
+  text-align: center;
+}
+
+.accesories {
+  height: 200px;
+  width: 400px;
+}
+
+.style {
+  height: 200px;
+  width: 400px;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+button {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid black;
+}
