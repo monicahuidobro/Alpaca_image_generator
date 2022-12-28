@@ -3,6 +3,7 @@
 }
 .content {
   display: inline-flex;
+  align-items: center;
 }
 
 .alpaca_container {
@@ -10,6 +11,9 @@
   height: 400px;
   position: relative;
   z-index: 4;
+  border: 2px dotted black;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .alpaca_container img {
@@ -21,6 +25,7 @@
 #back {
   z-index: 1;
 }
+
 #leg {
   z-index: 2;
 }
@@ -35,32 +40,39 @@
 #hair {
   z-index: 5;
 }
-#eyes {
+#nose {
   z-index: 6;
 }
-#nose {
+#mouth {
   z-index: 7;
 }
-#mouth {
+#eyes {
   z-index: 8;
 }
 #acc {
   z-index: 9;
+  display: none;
 }
 
 .options_container {
   flex: row wrap;
   text-align: center;
+  margin: 0px 20px;
 }
 
 .accesories {
   height: 200px;
   width: 400px;
+  border: 2px dotted black;
+  border-radius: 10px;
 }
 
 .style {
   height: 200px;
   width: 400px;
+  border: 2px dotted black;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 h2 {
@@ -76,4 +88,14 @@ button {
   margin: 10px;
   padding: 5px 10px;
   border: 1px solid black;
+}
+
+button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: lightgray;
+}
+button:active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  text-decoration: underline;
 }

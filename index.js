@@ -16,6 +16,12 @@ let but_hair = document.getElementById("hair_but");
 let but_eyes = document.getElementById("eyes_but");
 let but_leg = document.getElementById("leg_but");
 let but_back = document.getElementById("back_but");
+let but_def = document.getElementById("def_but");
+let but_cur = document.getElementById("cur_but");
+let but_sho = document.getElementById("sho_but");
+let but_ban = document.getElementById("ban_but");
+let but_ele = document.getElementById("ele_but");
+let but_qui = document.getElementById("qui_but");
 
 //Arrays de las imagenes posibles a mostrar
 let img_ears =["./Images/alpaca/ears/default.png", "./Images/alpaca/ears/tilt-backward.png", "./Images/alpaca/ears/tilt-forward.png"];
@@ -62,6 +68,7 @@ but_neck.addEventListener("click", function() {
 })
 
 but_acc.addEventListener("click", function() {
+  acc.style.display = "block";
   let imgActual = acc.getAttribute("src");
   let posActual = img_acc.indexOf(imgActual);
   let posNueva;
@@ -95,6 +102,7 @@ but_eyes.addEventListener("click", function() {
 })
 
 but_leg.addEventListener("click", function() {
+  leg.style.display = "block";
   let imgActual = leg.getAttribute("src");
   let posActual = img_leg.indexOf(imgActual);
   let posNueva;
@@ -115,3 +123,83 @@ but_back.addEventListener("click", function() {
   let imgNueva = img_back[posNueva];
   back.setAttribute("src", imgNueva);
 })
+
+//Funciones para mostrar cambios en los estilos
+but_def.addEventListener("click", function() {
+  ears.setAttribute("src", img_ears[0]);
+  mouth.setAttribute("src", img_mouth[0]);
+  neck.setAttribute("src", img_neck[0]);
+  acc.removeAttribute('src');
+  acc.style.display = "none";
+  hair.setAttribute("src", img_hair[0]);
+  eyes.setAttribute("src", img_eyes[0]);
+  leg.setAttribute("src", img_leg[0]);
+  leg.style.display = "block";
+  back.setAttribute("src", img_back[0]);
+})
+but_cur.addEventListener("click", function() {
+  ears.setAttribute("src", img_ears[1]);
+  mouth.setAttribute("src", img_mouth[4]);
+  neck.setAttribute("src", img_neck[0]);
+  acc.setAttribute("src", img_acc[3]);
+  acc.style.display = "block";
+  hair.setAttribute("src", img_hair[2]);
+  eyes.setAttribute("src", img_eyes[3]);
+  leg.setAttribute("src", img_leg[2]);
+  leg.style.display = "block";
+  back.setAttribute("src", img_back[7]);
+})
+
+but_sho.addEventListener("click", function() {
+  ears.setAttribute("src", img_ears[2]);
+  mouth.setAttribute("src", img_mouth[3]);
+  neck.setAttribute("src", img_neck[2]);
+  acc.setAttribute("src", img_acc[1]);
+  acc.style.display = "block";
+  hair.setAttribute("src", img_hair[6]);
+  eyes.setAttribute("src", img_eyes[2]);
+  leg.removeAttribute("src");
+  leg.style.display = "none";
+  back.setAttribute("src", img_back[16]);
+})
+
+but_ban.addEventListener("click", function() {
+  ears.setAttribute("src", img_ears[0]);
+  mouth.setAttribute("src", img_mouth[0]);
+  neck.setAttribute("src", img_neck[3]);
+  acc.setAttribute("src", img_acc[2]);
+  acc.style.display = "block";
+  hair.setAttribute("src", img_hair[1]);
+  eyes.setAttribute("src", img_eyes[1]);
+  leg.setAttribute("src", img_leg[3]);
+  leg.style.display = "block";
+  back.setAttribute("src", img_back[14]);
+})
+
+but_ele.addEventListener("click", function() {
+  ears.setAttribute("src", img_ears[2]);
+  mouth.setAttribute("src", img_mouth[0]);
+  neck.setAttribute("src", img_neck[1]);
+  acc.removeAttribute('src');
+  acc.style.display = "none";
+  hair.setAttribute("src", img_hair[3]);
+  eyes.setAttribute("src", img_eyes[4]);
+  leg.setAttribute("src", img_leg[4]);
+  leg.style.display = "block";
+  back.setAttribute("src", img_back[11]);
+})
+
+but_qui.addEventListener("click", function() {
+  ears.setAttribute("src", img_ears[2]);
+  mouth.setAttribute("src", img_mouth[1]);
+  neck.setAttribute("src", img_neck[0]);
+  acc.setAttribute("src", img_acc[0]);
+  acc.style.display = "block";
+  hair.setAttribute("src", img_hair[5]);
+  eyes.setAttribute("src", img_eyes[5]);
+  leg.setAttribute("src", img_leg[5]);
+  leg.style.display = "block";
+  back.setAttribute("src", img_back[4]);
+})
+
+
