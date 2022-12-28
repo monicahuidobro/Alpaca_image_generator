@@ -1,6 +1,12 @@
 * {
   font-family: "Righteous", cursive;
 }
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  width: 840px;
+}
 .content {
   display: inline-flex;
   align-items: center;
