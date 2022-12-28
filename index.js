@@ -15,12 +15,25 @@ const back =["./images/alpaca/backgrounds/blue50.png", "./images/alpaca/backgrou
             "./images/alpaca/backgrounds/red50.png", "./images/alpaca/backgrounds/red60.png", "./images/alpaca/backgrounds/red70.png", "./images/alpaca/backgrounds/yellow50.png", 
             "./images/alpaca/backgrounds/yellow60.png", "./images/alpaca/backgrounds/yellow70.png"];
 
+const alpacaAcc = [
+  ["ears_but", "ears", ears],
+  ["mouth_but", "mouth", mouth], 
+  ["neck_but", "neck", neck],
+  ["acc_but", "acc", acc],
+  ["hair_but", "hair", hair],
+  ["eyes_but", "eyes", eyes],
+  ["leg_but", "leg", leg],
+  ["back_but", "back", back]
+]
+
 //Function to change the accesories
 function changeAcc (source, arr) {
   const currImgIndex = arr.indexOf(source.getAttribute("src"));
   const newImgIndex = (currImgIndex < (arr.length -1)) ? currImgIndex +1 : 0;
   source.setAttribute("src", arr[newImgIndex]);
 }
+
+/* Previos way to do it without using forEach
 document.getElementById("ears_but").addEventListener("click", function() { changeAcc(document.getElementById("ears"), ears) });
 document.getElementById("mouth_but").addEventListener("click", function() { changeAcc(document.getElementById("mouth"), mouth) });
 document.getElementById("neck_but").addEventListener("click", function() { changeAcc(document.getElementById("neck"), neck) });
@@ -29,6 +42,13 @@ document.getElementById("hair_but").addEventListener("click", function() { chang
 document.getElementById("eyes_but").addEventListener("click", function() { changeAcc(document.getElementById("eyes"), eyes) });
 document.getElementById("leg_but").addEventListener("click", function() { changeAcc(document.getElementById("leg"), leg) });
 document.getElementById("back_but").addEventListener("click", function() { changeAcc(document.getElementById("back"), back) });
+*/
+
+//New way to do it using forEach
+
+alpacaAcc.forEach(([but, accesorie, images]) => {
+  document.getElementById(but).addEventListener("click", function() { changeAcc(document.getElementById(accesorie), images) });
+});
 
 //Function to change the style
  function changeStyle ({
