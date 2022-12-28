@@ -70,8 +70,7 @@ alpacaAcc.forEach(([but, accesorie, images]) => {
     document.getElementById("leg").setAttribute("src", legPos);
     document.getElementById("back").setAttribute("src", backPos);
   }
-document.getElementById("def_but").addEventListener("click", function() {changeStyle ({
-  accPos: "" })});
+document.getElementById("def_but").addEventListener("click", function() {changeStyle ({})});
 document.getElementById("cur_but").addEventListener("click", function() {changeStyle ({
   earPos: ears[1],
   mouthPos: mouth[4],
@@ -99,7 +98,6 @@ document.getElementById("ban_but").addEventListener("click", function() {changeS
 document.getElementById("ele_but").addEventListener("click", function() {changeStyle ({
   earPos: ears[2],
   neckPos: neck[1],
-  accPos: "",
   hairPos: hair[3],
   eyesPos: eyes[4],
   legPos:leg[4],

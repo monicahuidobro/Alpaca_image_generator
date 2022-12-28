@@ -25,16 +25,16 @@ body {
   width: 400px;
   height: 400px;
   position: relative;
-  z-index: 4;
-  border: 2px dotted black;
   border-radius: 10px;
   padding: 5px;
+  border-radius: 100%;
 }
 
 .alpaca_container img {
   width: 400px;
   height: 400px;
   position: absolute;
+  border-radius: 100%;
 }
 
 #back {
@@ -79,6 +79,7 @@ body {
   width: 400px;
   border: 2px dotted black;
   border-radius: 10px;
+  color: rgb(10, 145, 255);
 }
 
 .style {
@@ -87,6 +88,7 @@ body {
   border: 2px dotted black;
   border-radius: 10px;
   margin-top: 10px;
+  color: rgb(207, 209, 53);
 }
 
 h2 {
@@ -111,13 +113,28 @@ button {
   font-family: "Righteous", cursive;
 }
 
-button:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-color: lightgray;
-  color: black;
+.accesories button {
+  background-color: rgb(208, 233, 253);
 }
+
+.style button {
+  background-color: rgb(238, 240, 184);
+}
+
+.accesories button:hover {
+  box-shadow: 0 0 10px rgb(10, 145, 255);
+  background-color: rgb(10, 145, 255);
+  color: white;
+}
+.style button:hover {
+  box-shadow: 0 0 10px rgb(207, 209, 53);
+  background-color: rgb(207, 209, 53);
+  color: white;
+}
+
 button:active {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: white;
   text-decoration: underline;
+  color: black;
 }
