@@ -1,4 +1,6 @@
-# Alpaca_image_generator
+# ALPACA IMAGE GENERATOR
+
+!(./imagenes/alpaca/icon.png)
 
 ## Objetivo
 
