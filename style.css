@@ -7,9 +7,18 @@ h1 {
   font-size: 40px;
   width: 840px;
 }
+body {
+  position: absolute;
+  margin: auto;
+  top: 50%; /* mueve el elemento hacia abajo 50% de la pantalla */
+  left: 50%; /* mueve el elemento hacia la derecha 50% de la pantalla */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* mueve el elemento hacia arriba y hacia la izquierda para centrarlo */
+}
 .content {
   display: inline-flex;
-  align-items: center;
 }
 
 .alpaca_container {
