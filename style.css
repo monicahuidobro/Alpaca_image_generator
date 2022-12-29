@@ -10,22 +10,23 @@ h1 {
 body {
   position: absolute;
   margin: auto;
-  top: 50%; /* mueve el elemento hacia abajo 50% de la pantalla */
-  left: 50%; /* mueve el elemento hacia la derecha 50% de la pantalla */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* mueve el elemento hacia arriba y hacia la izquierda para centrarlo */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
 }
 .content {
-  display: inline-flex;
+  display: flex;
+  width: auto;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
 }
 
 .alpaca_container {
   width: 400px;
   height: 400px;
   position: relative;
-  border-radius: 10px;
   padding: 5px;
   border-radius: 100%;
 }
@@ -69,26 +70,23 @@ body {
 }
 
 .options_container {
-  flex: row wrap;
   text-align: center;
-  margin: 0px 20px;
 }
 
 .accesories {
   height: 200px;
   width: 400px;
-  border: 2px dotted black;
-  border-radius: 10px;
-  color: rgb(10, 145, 255);
+  color: black;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .style {
   height: 200px;
   width: 400px;
-  border: 2px dotted black;
-  border-radius: 10px;
-  margin-top: 10px;
-  color: rgb(207, 209, 53);
+  color: black;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 h2 {
@@ -106,30 +104,37 @@ button {
   border: 1px solid black;
 }
 
+.others {
+  display: inline-flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
 .others button {
   width: 400px;
   background-color: black;
   color: white;
   font-family: "Righteous", cursive;
 }
+.others button:hover {
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
 
 .accesories button {
-  background-color: rgb(208, 233, 253);
+  background-color: rgb(0, 139, 253);
+  color: white;
 }
 
 .style button {
-  background-color: rgb(238, 240, 184);
+  background-color: rgb(252, 255, 59);
+  color: black;
 }
 
 .accesories button:hover {
   box-shadow: 0 0 10px rgb(10, 145, 255);
-  background-color: rgb(10, 145, 255);
-  color: white;
 }
 .style button:hover {
   box-shadow: 0 0 10px rgb(207, 209, 53);
-  background-color: rgb(207, 209, 53);
-  color: white;
 }
 
 button:active {
