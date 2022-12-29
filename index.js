@@ -33,88 +33,41 @@ function changeAcc (source, arr) {
   source.setAttribute("src", arr[newImgIndex]);
 }
 
-/* Previos way to do it without using forEach
-document.getElementById("ears_but").addEventListener("click", function() { changeAcc(document.getElementById("ears"), ears) });
-document.getElementById("mouth_but").addEventListener("click", function() { changeAcc(document.getElementById("mouth"), mouth) });
-document.getElementById("neck_but").addEventListener("click", function() { changeAcc(document.getElementById("neck"), neck) });
-document.getElementById("acc_but").addEventListener("click", function() { changeAcc(document.getElementById("acc"), acc) });
-document.getElementById("hair_but").addEventListener("click", function() { changeAcc(document.getElementById("hair"), hair) });
-document.getElementById("eyes_but").addEventListener("click", function() { changeAcc(document.getElementById("eyes"), eyes) });
-document.getElementById("leg_but").addEventListener("click", function() { changeAcc(document.getElementById("leg"), leg) });
-document.getElementById("back_but").addEventListener("click", function() { changeAcc(document.getElementById("back"), back) });
-*/
-
-//New way to do it using forEach
-
 alpacaAcc.forEach(([but, accesorie, images]) => {
   document.getElementById(but).addEventListener("click", function() { changeAcc(document.getElementById(accesorie), images) });
 });
 
 //Function to change the style
- function changeStyle ({
-  earPos = ears[0],
-  mouthPos = mouth[0],
-  neckPos = neck[0],
-  accPos = acc[0],
-  hairPos = hair[0],
-  eyesPos = eyes[0],
-  legPos = leg[0],
-  backPos = back[0] }) 
-  {
-    document.getElementById("ears").setAttribute("src", earPos);
-    document.getElementById("mouth").setAttribute("src", mouthPos);
-    document.getElementById("neck").setAttribute("src", neckPos);
-    document.getElementById("acc").setAttribute("src", accPos);
-    document.getElementById("hair").setAttribute("src", hairPos);
-    document.getElementById("eyes").setAttribute("src", eyesPos);
-    document.getElementById("leg").setAttribute("src", legPos);
-    document.getElementById("back").setAttribute("src", backPos);
+function getStyleElements (indexEar, indexMouth, indexNeck, indexAcc, indexHair, indexEyes, indexLeg, indexBack) {
+  return [
+    ears[indexEar],
+    mouth[indexMouth],
+    neck[indexNeck],
+    acc[indexAcc],
+    hair[indexHair],
+    eyes[indexEyes],
+    leg[indexLeg],
+    back[indexBack] ];
+};
+
+ function changeStyle (elements) {
+    document.getElementById("ears").setAttribute("src", elements[0]);
+    document.getElementById("mouth").setAttribute("src", elements[1]);
+    document.getElementById("neck").setAttribute("src", elements[2]);
+    document.getElementById("acc").setAttribute("src", elements[3]);
+    document.getElementById("hair").setAttribute("src", elements[4]);
+    document.getElementById("eyes").setAttribute("src", elements[5]);
+    document.getElementById("leg").setAttribute("src", elements[6]);
+    document.getElementById("back").setAttribute("src", elements[7]);
   }
-document.getElementById("def_but").addEventListener("click", function() {changeStyle ({})});
-document.getElementById("cur_but").addEventListener("click", function() {changeStyle ({
-  earPos: ears[1],
-  mouthPos: mouth[4],
-  accPos: acc[3],
-  hairPos: hair[2],
-  eyesPos: eyes[3],
-  legPos: leg[2],
-  backPos: back[7] })});
-document.getElementById("sho_but").addEventListener("click", function() {changeStyle ({
-  earPos: ears[2],
-  mouthPos: mouth[3],
-  neckPos: neck[2],
-  accPos: acc[1],
-  hairPos: hair[6],
-  eyesPos: eyes[2],
-  legPos: leg[1],
-  backPos: back[16] })});
-document.getElementById("ban_but").addEventListener("click", function() {changeStyle ({
-  neckPos: neck[3],
-  accPos: acc[2],
-  hairPos:hair[1],
-  eyesPos: eyes[1],
-  legPos: leg[3],
-  backPos: back[14] })});
-document.getElementById("ele_but").addEventListener("click", function() {changeStyle ({
-  earPos: ears[2],
-  neckPos: neck[1],
-  hairPos: hair[3],
-  eyesPos: eyes[4],
-  legPos:leg[4],
-  backPos: back[11] })});
-document.getElementById("qui_but").addEventListener("click", function() {changeStyle ({
-  earPos: ears[2],
-  mouthPos: mouth[1],
-  hairPos: hair[5],
-  eyesPos: eyes[5],
-  legPos: leg[5],
-  backPos: back[4] })});
-  document.getElementById("ran_but").addEventListener("click", function() {changeStyle ({
-    earPos: ears[Math.floor(Math.random()*ears.length)],
-    mouthPos: mouth[Math.floor(Math.random()*mouth.length)],
-    accPos: acc[Math.floor(Math.random()*acc.length)],
-    hairPos: hair[Math.floor(Math.random()*hair.length)],
-    eyesPos: eyes[Math.floor(Math.random()*eyes.length)],
-    legPos: leg[Math.floor(Math.random()*leg.length)],
-    backPos: back[Math.floor(Math.random()*back.length)]})});
-  
+document.getElementById("def_but").addEventListener("click", function() {changeStyle (getStyleElements(0, 0, 0, 0, 0, 0, 0, 0))});
+document.getElementById("cur_but").addEventListener("click", function() {changeStyle (getStyleElements(1, 4, 3, 2, 3, 2, 2, 7))});
+document.getElementById("sho_but").addEventListener("click", function() {changeStyle (getStyleElements(2, 3, 2, 1, 6, 2, 1, 16))});
+document.getElementById("ban_but").addEventListener("click", function() {changeStyle (getStyleElements(0, 0, 3, 2, 1, 1, 3, 14))});
+document.getElementById("ele_but").addEventListener("click", function() {changeStyle (getStyleElements(2, 0, 1, 0, 3, 4, 4, 11))});
+document.getElementById("qui_but").addEventListener("click", function() {changeStyle (getStyleElements(2, 1, 0, 0, 5, 5, 5, 4))});
+document.getElementById("ran_but").addEventListener("click", function() {changeStyle (getStyleElements(
+  Math.floor(Math.random()*ears.length), Math.floor(Math.random()*mouth.length),
+  Math.floor(Math.random()*neck.length), Math.floor(Math.random()*acc.length),
+  Math.floor(Math.random()*hair.length), Math.floor(Math.random()*eyes.length),
+  Math.floor(Math.random()*leg.length), Math.floor(Math.random()*back.length)))});
